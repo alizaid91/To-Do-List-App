@@ -1,0 +1,46 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Jost", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0px 0px 10px;
+}
+
+.created-lists-container select {
+  padding: 5px;
+  border-radius: 30px;
+  background-color: crimson;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  margin-top: 10px;
+}
+
+.app-name h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.create-list-btn-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.create-list-btn-container button {
+  padding: 5px 15px 5px 15px;
+  border-radius: 30px;
+  border: none;
+  background-color: gray;
+  color: black;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}

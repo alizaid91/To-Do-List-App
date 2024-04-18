@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>To-Do List App</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-name">
+          <h1>To-Do List</h1>
+        </div>
+        <div class="created-lists-container">
+          <select name="created-lists" id="created-lists">
+            <option value="">Please Create a List!</option>
+          </select>
+        </div>
+      </header>
+      <div class="create-list-btn-container">
+        <button id="create-new-list-btn" onclick="listCreation()">
+          Create New List!
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

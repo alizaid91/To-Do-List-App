@@ -17,48 +17,43 @@
     <title>To-Do List App</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <div class="app-name">
-          <h1>To-Do List</h1>
-        </div>
-        <div class="created-lists-container">
-          <select name="created-lists" id="created-lists">
-            <option value="">My List</option>
-          </select>
-        </div>
-      </header>
-      <div class="tasks-container-main">
-        <div class="task-container">
-          <p class="add-tasks-msg">Click on "+" to add tasks!</p>
-          <ul class="tasks-list">
-            <!-- <li>
-              <p class="checked">Task 1</p>
-              <p>Date & Time</p>
-            </li>
-            <li>
-              <p>Task 2</p>
-              <p>Date & Time</p>
-            </li>
-            <li>
-              <p>Task 3</p>
-              <p>Date & Time</p>
-            </li> -->
-          </ul>
-          <i class="fa-solid fa-circle-plus" onclick="createTask()"></i>
-        </div>
-      </div>
-      <div class="wrapper">
-      <div class="task-details-input">
-        <i class="fa-solid fa-circle-xmark" onclick="Close()"></i>
-        <input type="text" placeholder="Task Name" id="task-name" />
-        <p>Date:</p>
-        <input type="date" name="taskDate" id="task-date" />
-        <button onclick="addTask()">Add</button>
-      </div>
+    <div class="head">
+    <div class="main">
+      <div class="app-name"><h1>To-Do List</h1></div>
     </div>
+    <div class="curret-list">
+      <p>My List</p>
+      <i class="fa-solid fa-circle-chevron-down"></i>
     </div>
-
-    <script src="script.js"></script>
+  </div>
+    <div class="list-container">
+      <ul class="tasks-list">
+        <!-- <li class="checked">
+          <div class="task">
+            <p>Task 1</p>
+            <p>Date</p>
+          </div>
+        </li>
+        <li>
+          <div class="task">
+            <p>Task 2</p>
+            <p>Date</p>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+    <div class="wrapper">
+    <div class="task-details-input">
+      <i class="fa-solid fa-circle-xmark" onclick="Close()"></i>
+      <input type="text" placeholder="Task Name" id="task-name" />
+      <p>Date:</p>
+      <input type="date" name="taskDate" id="task-date" />
+      <button onclick="addTask()">Add</button>
+    </div>
+  </div>
+    <footer>
+      <i class="fa-solid fa-circle-plus" onclick="createTask()"></i>
+    </footer>
+    <script src="app.js"></script>
   </body>
 </html>

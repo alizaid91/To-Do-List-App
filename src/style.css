@@ -4,130 +4,124 @@
   font-family: "Jost", sans-serif;
 }
 
-body {
-  background-color: #93c5fd;
+body,
+html {
+  /* The image used */
+  background-image: url("https://img.freepik.com/premium-vector/geometric-background-pattern_2239-309.jpg?w=740");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px 0px 0px 10px;
+.head{
+  background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
-.app-name h1 {
-  font-size: 30px;
-  font-weight: 600;
-  color: #082f49;
-}
-
-.created-lists-container select {
-  padding: 5px;
-  border-radius: 30px;
-  background-color: #075985;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  margin-top: 10px;
-}
-
-.tasks-container-main {
-  display: flex;
-  justify-content: center;
-}
-
-.task-container {
-  position: relative;
-  margin-top: 20px;
-  background-color: #075985;
-  width: 90%;
-  max-width: 300px;
-  height: 65vh;
-  border-radius: 20px;
-  overflow-y: scroll;
-  scrollbar-width: none;
-}
-
-.add-tasks-msg{
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% , -50%);
-  font-size: 18px;
-  font-weight: 500;
-  width: 90%;
+.app-name h1{
   text-align: center;
-  color: lightblue;
+  padding-top: 15px;
 }
 
-.task-container i {
-  color: #22c55e;
-  font-size: 50px;
-  position: sticky;
-  top: 56vh;
-  left: 240px;
-  cursor: pointer;
+.curret-list{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.curret-list p{
+  font-size: 24px;
+}
+
+.list-container{
+  max-height: 60vh;
+  overflow-y: scroll;
 }
 
 ul{
-  position: absolute;
-  left: 50px;
-  top: 30px;
   list-style: none;
-  font-size: 22px;
-  font-weight: 600;
-  padding-right: 20px;
+  padding: 15px 0px 10px 40px;
+  /* position: absolute; */
+
 }
 
-li{
+ul li{
   margin-bottom: 20px;
-  color: white;
   position: relative;
 }
 
-ul li :nth-child(2){
-  font-size: 14px;
-  margin-top: 3px;
-  padding: 2px 5px 2px 5px;
-  background-color: #c4b5fd;
-  color: black;
-  border-radius: 28px;
-  width: 100px;
-  text-align: center;
-}
-
-ul li::before{
+ul li div::before{
   content: '';
   position: absolute;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
-  background-image: url(assets/unchecked.png);
+  background-image: url(assets/circle-regular.svg);
   background-size: cover;
   background-position: center;
-  top: 7px;
-  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -32px;
 }
 
-ul li.checked{
+ul li div.checked{
   color: white;
   text-decoration: line-through;
 }
 
-ul li.checked::before{
-  background-image: url(assets/checked.png);
+ul li div.checked::before{
+  background-image: url(assets/circle-check-regular.svg);
+  background-color: #84cc16;
+}
+
+ul > li > div{
+  background-color: rgb(0, 0, 0, 0.8);
+  max-width: 90%;
+  padding: 10px;
+  border-radius: 20px;
+  position: relative;
+}
+
+ul > li > div > p:nth-child(1){
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+ul > li > div > p:nth-child(2){
+  font-size: 16px;
+  font-weight: 500;
+  color: lightblue;
+  margin-left: 10px;
+}
+
+ul > li > div > i{
+  color: lightcoral;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
 }
 
 .wrapper{
   display: none;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   position: absolute;
   bottom: 0;
+  
 }
 
 .task-details-input{
@@ -142,43 +136,64 @@ ul li.checked::before{
   /* backdrop-filter: blur(3px); */
   padding: 30px;
 }
+  .task-details-input input{
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 90%;
+    border: none;
+    font-weight: 600;
+  }
+  
+  .task-details-input p{
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 10px;
+    color: white;
+  }
+  
+  .task-details-input button{
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #84cc16;
+  }
+  
+  
+  .fa-circle-xmark{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: red;
+  }
 
-.task-details-input input{
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 20px;
-  width: 90%;
-  border: none;
-  font-weight: 600;
+footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
-.task-details-input p{
-  font-size: 16px;
-  font-weight: 600;
-  margin-left: 10px;
-  color: white;
-}
-
-.task-details-input button{
-  width: 50%;
-  margin: 0 auto;
-  padding: 5px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 14px;
-  font-weight: 700;
-  background-color: #84cc16;
-}
-
-
-.fa-circle-xmark{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  color: red;
+.fa-circle-plus{
+  display: block;
+ font-size: 45px;
+ padding-bottom: 10px;
+ padding-top: 10px;
 }

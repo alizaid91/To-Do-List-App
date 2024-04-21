@@ -12,7 +12,7 @@ let task = document.getElementsByTagName("li")
 function createTask(){
     createTaskBox.style.display = "block"
     wrapper.style.display = "block"
-    footer.style.display = "none"
+    // footer.style.display = "none"
 }
 
 function addTask(){
@@ -39,7 +39,7 @@ function addTask(){
             taskList.appendChild(li)
             createTaskBox.style.display = "none"
             wrapper.style.display = "none"
-            footer.style.display = "block"
+            // footer.style.display = "block"
             saveData()
         }
         else{
@@ -58,7 +58,7 @@ function addTask(){
             taskList.appendChild(li)
             createTaskBox.style.display = "none"
         wrapper.style.display = "none"
-        footer.style.display = "block"
+        // footer.style.display = "block"
         saveData()
         }
 
@@ -81,7 +81,7 @@ taskContainerMain.addEventListener("click" , function(e){
 function Close(){
     createTaskBox.style.display = "none"
     wrapper.style.display = "none"
-    footer.style.display = "block"
+    // footer.style.display = "block"
 }
 
 function saveData(){

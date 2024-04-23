@@ -7,7 +7,7 @@
 body,
 html {
   /* The image used */
-  background-image: url("https://img.freepik.com/premium-vector/geometric-background-pattern_2239-309.jpg?w=740");
+  /* background-image: url("https://img.freepik.com/premium-vector/geometric-background-pattern_2239-309.jpg?w=740"); */
 
   /* Full height */
   height: 100%;
@@ -20,12 +20,13 @@ html {
 }
 
 .head{
-  background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
 
 .app-name h1{
+  color: #d9f99d;
   text-align: center;
   padding-top: 15px;
 }
@@ -40,6 +41,7 @@ html {
 }
 
 .curret-list p{
+  color: lightcyan;
   font-size: 24px;
 }
 
@@ -83,14 +85,24 @@ ul li div.checked{
 ul li div.checked::before{
   background-image: url(assets/circle-check-regular.svg);
   background-color: #84cc16;
+  transition: 0.5s ease-in-out;
 }
 
 ul > li > div{
-  background-color: rgb(0, 0, 0, 0.8);
+  background-color: #1f2937;
   max-width: 90%;
   padding: 10px;
   border-radius: 20px;
   position: relative;
+}
+
+@keyframes removeAnimation {
+  0% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(-100px); }
+}
+
+ul > li > div.remove-animate {
+  animation: removeAnimation 0.5s ease forwards;
 }
 
 ul > li > div > p:nth-child(1){
@@ -107,7 +119,7 @@ ul > li > div > p:nth-child(2){
 }
 
 ul > li > div > i{
-  color: lightcoral;
+  color: #fca5a5;
   font-size: 25px;
   position: absolute;
   top: 50%;
@@ -124,26 +136,33 @@ ul > li > div > i{
   backdrop-filter: blur(5px);
   position: absolute;
   bottom: 0;
-  
 }
 
 .task-details-input{
   z-index: 999;
-  display: none;
+  /* display: none; */
   width: 200px;
   border-radius: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50% , -50%);
-  background-image: url(https://img.freepik.com/free-vector/colorful-3d-modern-background-design_53876-87394.jpg?t=st=1713673636~exp=1713677236~hmac=ba511e51467a6d2ab11faca15f58e288b632247123783c879e008e62e3f170e3&w=740);
+  /* background-image: url(https://img.freepik.com/free-vector/colorful-3d-modern-background-design_53876-87394.jpg?t=st=1713673636~exp=1713677236~hmac=ba511e51467a6d2ab11faca15f58e288b632247123783c879e008e62e3f170e3&w=740); */
+  background-color: #94a3b8;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
   /* backdrop-filter: blur(3px); */
   padding: 30px;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
 }
+
+.task-details-input.show{
+  opacity: 2;
+}
+
   .task-details-input input{
     margin-bottom: 15px;
     padding: 10px;
@@ -153,13 +172,43 @@ ul > li > div > i{
     font-weight: 600;
   }
   
-  .task-details-input p{
+  .task-details-input p:nth-child(4){
     font-size: 18px;
     font-weight: 600;
     margin-left: 10px;
     color: black;
   }
+
+  .task-details-input p:nth-child(2){
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #d9f99d;
+  }
   
+  @keyframes shake-check-ans-btn {
+    0% {
+      transform: translateX(0);
+    }
+  
+    25% {
+      transform: translateX(-5px);
+    }
+  
+    50% {
+      transform: translateX(5px);
+    }
+  
+    75% {
+      transform: translateX(-5px);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+
   .task-details-input button{
     width: 50%;
     margin: 0 auto;
@@ -175,6 +224,9 @@ ul > li > div > i{
     background-color: #84cc16;
   }
   
+  .shake{
+    animation: shake-check-ans-btn 0.5s ease-in-out;
+  }
   
   .fa-circle-xmark{
     position: absolute;
@@ -194,14 +246,15 @@ footer{
   left: 0;
   bottom: 0;
   width: 100%;
-  background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
 
 .fa-circle-plus{
   display: block;
- font-size: 45px;
+ font-size: 50px;
  padding-bottom: 10px;
  padding-top: 10px;
+ color: #84cc16;
 }

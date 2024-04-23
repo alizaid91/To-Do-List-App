@@ -10,14 +10,23 @@ let task = document.getElementsByTagName("li")
 
 
 function createTask(){
-    createTaskBox.style.display = "block"
+    // createTaskBox.style.display = "block"
+    setTimeout(function() {
+        createTaskBox.classList.add("show")
+        // wrapper.classList.add("wrapshow")
+        saveData();
+    }, 100);
+    
     wrapper.style.display = "block"
-    // footer.style.display = "none"
 }
 
 function addTask(){
     if(taskName.value === ''){
-        alert("Enter Task Name!")
+        taskName.classList.add("shake");
+
+        setTimeout(function() {
+          taskName.classList.remove("shake");
+        }, 500);
     }
 
     else{
@@ -37,7 +46,10 @@ function addTask(){
             taskContainer.appendChild(delTask)
             li.appendChild(taskContainer)
             taskList.appendChild(li)
-            createTaskBox.style.display = "none"
+            setTimeout(function() {
+                createTaskBox.classList.remove("show")
+                saveData();
+            }, 300);
             wrapper.style.display = "none"
             // footer.style.display = "block"
             saveData()
@@ -56,9 +68,11 @@ function addTask(){
             taskContainer.appendChild(delTask)
             li.appendChild(taskContainer)
             taskList.appendChild(li)
-            createTaskBox.style.display = "none"
-        wrapper.style.display = "none"
-        // footer.style.display = "block"
+            setTimeout(function() {
+                createTaskBox.classList.remove("show")
+                saveData();
+            }, 300);
+            wrapper.style.display = "none"
         saveData()
         }
 
@@ -73,15 +87,21 @@ taskContainerMain.addEventListener("click" , function(e){
         saveData()
     }
     else if(e.target.tagName === "I"){
-        e.target.parentElement.remove()
-        saveData()
+        e.target.parentElement.classList.add("remove-animate")
+
+        setTimeout(function() {
+            e.target.parentElement.remove()
+            saveData();
+        }, 500);
     }
 },false)
 
 function Close(){
-    createTaskBox.style.display = "none"
+    setTimeout(function() {
+        createTaskBox.classList.remove("show")
+        saveData();
+    }, 300);
     wrapper.style.display = "none"
-    // footer.style.display = "block"
 }
 
 function saveData(){
